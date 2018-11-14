@@ -22,9 +22,26 @@ const issues = [
 class App extends Component {
   constructor() {
     super();
-    this.state = { issues: issues };
+    this.state = { issues: [] };
 
-    //this.createIssue = this.createIssue.bind(this);
+    this.createIssue = this.createIssue.bind(this);
+  }
+
+  componentDidMount() {
+    this.loadData();
+  }
+
+  loadData() {
+    setTimeout(() => {
+      this.setState({ issues: issues });
+    }, 500);
+  }
+
+  createIssue(newIssue) {
+    const newIssues = this.state.issues.slice();
+    newIssue.id = this.state.issues.length + 1;
+    newIssues.push(newIssue);
+    this.setState({ issues: newIssues });
   }
 
   render() {
