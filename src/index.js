@@ -6,7 +6,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
 //const store = createStore(shoppingListItemReducer); /* code change */
 
 ReactDOM.render(<App />, document.getElementById('root'));
